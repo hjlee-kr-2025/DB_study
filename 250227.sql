@@ -143,3 +143,30 @@ delete from rental;
 select * from language;
 -- language 테이블에 language_id 가 10번인것은 삭제하겠습니다.
 delete from language where language_id = 10;
+
+
+-- update : 데이터 수정
+select * from payment;
+update payment set amount=amount*1.1;
+
+update payment set last_update=now();
+
+
+-- 보통은 수정시 where 문과 함께 사용됩니다.
+select * from actor;
+update actor set last_name=upper('cruz')
+	where first_name like 'PENELOPE'
+    and last_name like 'GUINESS';
+
+
+-- 정보를 확인하는 명령들
+-- 데이터베이스가 어떤것이 있는지 확인
+show databases;
+-- 테이블(table) 확인
+show tables;
+show tables from world;
+-- column 확인
+show columns from country;
+
+show create table country;
+   
