@@ -14,3 +14,18 @@ SQL(Structured Query Language)
 
 mysql 기본포트 : 3306
 root 비밀번호 : java1234
+
+
+데이터 조작어를 사용한 명령중
+테이블의 모든 데이터를 가져오는
+명령은 기억합니다.
+select * from 테이블이름;
+
+select 열이름 from 테이블이름;
+select 열이름1, 열이름2 from 테이블이름;
+
+일반게시판 리스트를 가져오는 쿼리를 작성하면
+select no, title, writer, writeDate, hit
+  from board;
+==> board 테이블의 모든데이터 중
+5개의 열이름에 대한 내용만 가져옵니다.  
