@@ -15,5 +15,30 @@ show tables;
 
 -- 테이블의 모든 데이터를 불러오자.
 select * from actor;
+-- 특정 열(column)에 대한 데이터를 가져오자.
 select first_name, last_name from actor;
+
+select * from city;
+-- 테이블안의 저장된데이터의 개수를 알려면?
+-- actor 테이블 데이터개수를 알아보자.
+select count(*) from actor;
+
+select * from language;
+-- language 테이블에서 name 이 English 인 데이터만 가져옵니다.
+select * from language where name = 'English';
+
+select * from actor where actor_id > 195;
+
+-- language 테이블에서 language_id가 3인것을 제외하고 가져옵니다.
+select * from language where language_id <> 3;
+select * from language where language_id != 3;
+
+-- actor 테이블의 first_name 을 조건으로 실습합니다.
+select * from actor where first_name < 'B';
+select * from actor where first_name < 'b';
+
+-- film table
+select * from ffilm_actorilm;
+-- title 에 family 가 들어있는 데이터를 가져올때?
+select * from film where title like '%family%';
 

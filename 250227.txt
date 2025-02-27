@@ -29,3 +29,28 @@ select no, title, writer, writeDate, hit
   from board;
 ==> board 테이블의 모든데이터 중
 5개의 열이름에 대한 내용만 가져옵니다.  
+
+
+-- language 테이블에서 name 이 English 인 데이터만 가져옵니다.
+select * from language where name = 'English';
+(((select 기본사용)))
+select 열이름 from 테이블 where 조건;
+$ 열이름부분에는
+- * : 전체 열을 의미합니다.
+- 두개이상의 열은 ,로 구분하여 적으면 됩니다.
+
+$ 데이터베이스에서 '=' 는 같다는 의미로 쓰입니다.
+$ 저장된 데이터는 대소문자를 구별합니다.
+$ 데이터를 표시할 때는 '' (작은 따옴표) 안에
+적으시면 됩니다.
+
+mysql 비교연산자
+= : 같다
+>, >=, <, <=
+!=, <> : 같지않다.
+
+논리연산자
+and   : 양쪽이 모두 참 인경우
+or    : 둘중 하나가 참 인경우
+not   : 반대경우
+xor   : 둘 중 하나만 참 인경우
