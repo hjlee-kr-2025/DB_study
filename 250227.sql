@@ -99,5 +99,47 @@ select count(*) from city inner join country
 	on city.country_id = country.country_id
     where country.country_id = 49
     order by country, city;
+    
+    
+-- insert CRUD의 C에 해당하는 명령문입니다.
+-- lagauage table이 어떻게 구성되어있는지 확인
+show columns from language;
+select * from language;
+insert into language values(null, 'Protuguese', now());
+insert into language values(8, 'Russian', '2025-02-27 14:27:01');
+insert into language values(null, 'Arabic', now());
+insert into language values(null, 'Spanish', now()),
+	(null, 'Hebrew', now());
+    
+insert into language (name) values ('Korean'); 
 
 
+desc city;
+insert into city (city, country_id) 
+	values ('Bebedouro', 19);
+select * from city order by city_id desc;
+
+-- 여러 데이터 동시 저장
+insert into city (city, country_id)
+	values ('Sao Carlos', 19),
+    ('Araraquara', 19),
+    ('Ribeirao Preto', 19);
+
+desc country;
+insert into country values (null, 'Uruguay', default);
+select * from country order by country_id desc;
+
+insert into country set country_id=null,
+	country='Bahamas', last_update=now();
+    
+    
+-- delete 명령문 (데이터 삭제)
+select * from rental;
+-- safe모드 비활성화
+set sql_safe_updates = 0;
+-- 테이블내 데이터를 전체 삭제합니다.
+delete from rental;
+
+select * from language;
+-- language 테이블에 language_id 가 10번인것은 삭제하겠습니다.
+delete from language where language_id = 10;
