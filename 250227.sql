@@ -38,7 +38,66 @@ select * from actor where first_name < 'B';
 select * from actor where first_name < 'b';
 
 -- film table
-select * from ffilm_actorilm;
+select * from film_actor;
 -- title 에 family 가 들어있는 데이터를 가져올때?
 select * from film where title like '%family%';
+
+
+select * from film_list;
+-- 논리연산자로 데이터 가져오기
+select title from film_list where category
+	like 'Sci-Fi' and rating like 'PG';
+
+select title from film_list where
+	category like 'Children' or
+    category like 'Family';
+
+select title from film_list where
+	(category like 'Sci-Fi' or
+    category like 'Family') and
+    rating like 'PG';
+    
+select * from language where
+	not (language_id = '3');
+    
+select * from film_list;    
+-- 복잡한 쿼리
+-- 가격범위가 2에서 4 사이이고 Documentary 나 Horror 장르
+-- Bob 배우등장하는 영화제목을 가져오는 쿼리
+select title from film_list
+	where price between 2 and 4
+    and (category like 'Documentary' or
+    category like 'Horror')
+    and actors like '%Bob%';
+    
+select * from actor;
+-- sort (정렬) 을 위해 사용하는 명령 ordey by
+select * from actor order by first_name;
+-- 기본은 오름차순 정렬입니다.
+-- 내림차순 정렬은?
+select * from actor order by first_name desc;
+
+-- mysql 에서만 사용할 수 있는 limit
+select * from actor order by first_name desc limit 5;
+
+-- 두개의 테이블을 결합해서 데이터를 가져옵니다.
+select * from city;
+select * from country;
+
+select city, country from city inner join country
+	on city.country_id = country.country_id
+    where country.country_id < 5
+    order by country, city;
+-- 위와 똑같은 처리를 하는 다른 방법
+select city. country from city inner join country
+	using (country_id)
+    where country.country_id <5
+    order by country, city;
+
+-- country_id = 49 인 도시의 개수는?
+select count(*) from city inner join country
+	on city.country_id = country.country_id
+    where country.country_id = 49
+    order by country, city;
+
 
