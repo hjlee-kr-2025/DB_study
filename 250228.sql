@@ -72,6 +72,20 @@ select title, name as category_name, count(*) as cnt
     order by cnt desc;
 
 
+select * from customer;
+select * from rental;
+select * from inventory;    
+select email, name as category_name,
+	count(category_id) as cnt
+    from customer join rental using (customer_id)
+    join inventory using (inventory_id)
+    join film_category using (film_id)
+    join category using (category_id)
+    group by 1, 2
+    order by 3 desc;
+
+
+
 
 
 
