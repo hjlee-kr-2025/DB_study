@@ -83,10 +83,11 @@ select email, name as category_name,
     join category using (category_id)
     group by 1, 2
     order by 3 desc;
+-- 1, 2, 3, 숫자 대신에 email, category_name, cnt 를
+-- 사용하셔되 됩니다.
+
+-- count() 열 갯수를 알려주는 함수 입니다.
+-- max() 최대값을 알려주는 함수 입니다.
 
 
 
-
-
-
-select 

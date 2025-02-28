@@ -16092,9 +16092,6 @@ COMMIT;
 -- Trigger to enforce rental_date on INSERT
 --
 
-CREATE TRIGGER rental_date BEFORE INSERT ON rental
-	FOR EACH ROW SET NEW.rental_date = NOW();
-
 --
 -- Dumping data for table staff
 --
