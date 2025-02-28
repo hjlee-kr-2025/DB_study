@@ -1,0 +1,38 @@
+mySQL DB
+
+- 데이터 조작어 (DML)
+* select  - R
+* insert  - C
+* update  - U
+* delete  - D
+
+- 데이터 정의어
+* create
+* drop
+
+- 데이터 형식
+* 정수형
+  tinyint
+  smallint
+  mediumint
+  int
+  bigint
+* 부동소수점
+  float
+  double
+* 문자형
+  varchar(byte수)
+  - 한글은 한글자에 4byte저장공간이 필요합니다.
+  - 최대공간을 표시하고 실제 사용되는 저장공간은 데이터 길이에 가변됩니다.
+  - 최대 크기 : 8000 byte수
+
+  text
+  - 65535 byte
+* 날짜/시간형
+  date : 날짜만 기록할 때 사용
+  time : 시간만 기록할 때 사용
+  timestamp : 날짜 + 시간
+
+* auto_increment 를 테이블 생성시 옵션으로 사용하면 해당열에 값이 들어오지 않으면 자동으로 숫자를 만들어줍니다.
+- 해당 테이블에 하나의 열에만 사용가능합니다.
+- primary key에 사용할 수 있습니다.
