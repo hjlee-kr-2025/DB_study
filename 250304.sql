@@ -50,8 +50,35 @@ create table board (
 );
 select * from board;
 
+-- sample 데이터 입력
+insert into board (title, content, writer, pw)
+	values ('java', '자바를 배우는 시간입니다', '이현진', '1111');
+insert into board (title, content, writer, pw)
+	values ('mysql', '자바에 mysql을 연결합니다.', '이현진', '1111');
 
+select * from board;
 
-
-
+-- 리스트를 가져오는 쿼리
+select no, title, writer, writeDate, hit
+	from board order by no desc;
+-- writeDate에 날짜만 출력하고 싶습니다.
+select no, title, writer,
+	date_format(writeDate, '%Y-%m-%d') as writeDate,
+    hit
+    from board order by no desc;
+-- 글보기에 사용되는 쿼리
+select no, title, content, writer,
+	date_format(writeDate, '%Y-%m-%d') as writeDate,
+    hit, pw
+    from board where no = 1;
+-- 조회수 증가
+update board set hit = hit + 1 where no = 1;
+-- 글쓰기
+insert into board (title, content, writer, pw) 
+	values ('자바', '자바+mysql', '이현진', '1111');
+-- 글수정
+update board set title='', content='', writer=''
+	where no=1 and pw='1111';
+-- 글삭제
+delete from board where no=1 and pw='1111';
 
