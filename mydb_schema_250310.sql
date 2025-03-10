@@ -44,11 +44,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`member` (
   `status` VARCHAR(8) NULL DEFAULT '정상',
   `photo` VARCHAR(100) NULL,
   `newMsgCnt` INT NULL DEFAULT 0,
-  `grade_gradeNo` INT NOT NULL,
+  `gradeNo` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_member_grade_idx` (`grade_gradeNo` ASC) VISIBLE,
+  INDEX `fk_member_grade_idx` (`gradeNo` ASC) VISIBLE,
   CONSTRAINT `fk_member_grade`
-    FOREIGN KEY (`grade_gradeNo`)
+    FOREIGN KEY (`gradeNo`)
     REFERENCES `mydb`.`grade` (`gradeNo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
